@@ -1,0 +1,27 @@
+{
+  "kind": "evm_contracts",
+  "contracts": [
+    {
+      "contract": "Ochre",
+      "constructorArgs": [
+        "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
+        "0x7B8C742F2e1eEB3fB2C10d72967Fa6d4a22f0479",
+        "0x7B8C742F2e1eEB3fB2C10d72967Fa6d4a22f0479",
+        "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "1791384259",
+        "3600",
+        "150",
+        "4000000000000000",
+        "400000000000000",
+        "0x7a746f2d636176652d7465737435000000000000000000000000000000000000",
+        "0x7a746f2d636176652d7465737434000000000000000000000000000000000000",
+        "0x7a746f2d636176652d7465737433000000000000000000000000000000000000",
+        "0x7a746f2d636176652d7465737432000000000000000000000000000000000000",
+        "0x7a746f2d636176652d7465737435000000000000000000000000000000000000",
+        "0x7a746f2d636176652d7465737434000000000000000000000000000000000000",
+        "0x7a746f2d636176652d7465737433000000000000000000000000000000000000"
+      ]
+    }
+  ],
+  "notes": "Sepolia rehearsal only (chain 11155111). Deploy Ochre only; existing WETH, no coin deployment. Dead and 18 decimals are constants. Constructor makes no external calls. The immutable seat root is a rehearsal placeholder. Admin and Adam are explicit beneficiaries, independent of factory caller. No transaction has been broadcast; the deployment service must simulate gas with the target fork and confirm the fixed start time before launch."
+}

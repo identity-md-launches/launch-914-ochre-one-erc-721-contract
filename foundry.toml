@@ -1,0 +1,20 @@
+[profile.default]
+src = "src"
+test = "test"
+libs = ["lib"]
+solc = "0.8.26"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 1
+via_ir = true
+bytecode_hash = "none"
+# Solidity 0.8.26's default Yul sequence with only F (FunctionSpecializer) omitted.
+# Avoid duplicate event-emitting functions and their trailing constant pool, which the verifier scans as code.
+optimizer_details = { yulDetails = { optimizerSteps = "dhfoDgvulfnTUtnIfxa[r]EscLMVcul [j]Trpeulxa[r]cLgvifMCTUca[r]LSsTOtfDnca[r]IulcscCTUtgvifMx[scCTUt] TOntnfDIulgvifMjmul[jul] VcTOcul jmul:fDnTOcmuO" } }
+remappings = ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "forge-std/=lib/forge-std/src/"]
+
+[profile.default.fuzz]
+runs = 256
+
+[fmt]
+line_length = 110
