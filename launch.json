@@ -8,7 +8,7 @@
         "0x7B8C742F2e1eEB3fB2C10d72967Fa6d4a22f0479",
         "0x7B8C742F2e1eEB3fB2C10d72967Fa6d4a22f0479",
         "0x1111111111111111111111111111111111111111111111111111111111111111",
-        "1791384259",
+        "1791475200",
         "3600",
         "150",
         "4000000000000000",
@@ -23,5 +23,5 @@
       ]
     }
   ],
-  "notes": "Sepolia rehearsal only (chain 11155111). Deploy Ochre only; existing WETH, no coin deployment. Dead and 18 decimals are constants. Constructor makes no external calls. The immutable seat root is a rehearsal placeholder. Admin and Adam are explicit beneficiaries, independent of factory caller. No transaction has been broadcast; the deployment service must simulate gas with the target fork and confirm the fixed start time before launch."
+  "notes": "Sepolia rehearsal on chain 11155111, selected by the deployment service. Deploy exactly one application: Ochre (ERC-721, OCHRE, maximum 737 pieces). The 16 static arguments follow the accepted constructor ABI: coin, admin, adam, seatRoot, startTime, caveLength, roundLength, startPrice, floorPrice, then seven bytes32 labels. Admin and Adam both use the beneficiary address explicitly specified in the brief; the factory receives no application privileges. The constructor mints IDs 0 and 736 to those beneficiaries and makes no external calls. WETH is the existing Sepolia coin at 0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14; rehearsal wallets wrap Sepolia ETH and approve Ochre themselves. No coin is deployed. Coin decimals (18) and the dead address (0x000000000000000000000000000000000000dEaD) are contract constants, not constructor arguments. Purchase payments go directly from buyer to dead. The revised rehearsal start is Unix 1791475200 (2026-10-08 16:00:00 UTC), replacing the expired 1791384259 start to leave time for review and deployment. Deploy before this start to retain every sale window; if deployment is delayed past it, refresh this static argument before building the launch transaction. The constructor has no schedule setter. Caves last 3600 seconds and rounds 150 seconds; each round starts at 4000000000000000 coin base units and falls to 400000000000000. The seat root is the supplied rehearsal placeholder and has no setter. Labels are ASCII right-padded with zeros to bytes32, in cave order: zto-cave-test5, zto-cave-test4, zto-cave-test3, zto-cave-test2, zto-cave-test5, zto-cave-test4, zto-cave-test3. This manifest supplies no ETH funding or initialization calls."
 }
